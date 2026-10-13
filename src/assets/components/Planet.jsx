@@ -47,7 +47,7 @@ const Planet = () => {
     sceneRef.current = scene;
     const asteroidLoader = new GLTFLoader();
     let asteroidModel;
-    asteroidLoader.load('/Asteroid.glb', (gltf) => {
+    asteroidLoader.load('/Planet/Asteroid.glb', (gltf) => {
         asteroidModelRef.current = gltf.scene;
         const scale = 0.05 + Math.random() * 0.1;
         asteroidModelRef.current.position.set(3, 0, 0);
@@ -132,12 +132,12 @@ const Planet = () => {
 
     
 
-    loader.load('/violetplanet/planet2.obj', function (loadedObj, loadedRing) {
+    loader.load('/Planet/violetplanet/planet2.obj', function (loadedObj, loadedRing) {
     obj = loadedObj;
     ring = loadedRing;
 
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load('/violetplanet/planet2.png');
+    const texture = textureLoader.load('/Planet/violetplanet/planet2.png');
 
     obj.traverse(function (child) {
         if (child.isMesh) {
